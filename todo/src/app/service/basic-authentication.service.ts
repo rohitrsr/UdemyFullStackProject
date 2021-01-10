@@ -28,7 +28,7 @@ export class BasicAuthenticationService {
   // }
 
   executeJwtAuthenticationService(username,password){
-    console.log(this.baseUrl);
+    //console.log(this.baseUrl);
     return this.http.post<any>(`${this.baseUrl}/authenticate`,
     {username,password}).pipe(map(
       response=>{
