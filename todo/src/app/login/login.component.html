@@ -1,0 +1,26 @@
+<h1>Login</h1>
+<h1>{{env}}</h1>
+<div class="container">
+  <div class="alert alert-warning" *ngIf="loginForm.invalid">Both field is required</div>
+  <div class="alert alert-warning" *ngIf="invalidLogin">{{errorMessage}}</div>
+  <form (ngSubmit)="!loginForm.invalid && handleJwtLogin()" #loginForm="ngForm">
+
+    <fieldset class="form-group">
+      <label>Username</label>
+      <input type="text" name="username" [(ngModel)]="username"
+      class="form-control" required="required" >
+    </fieldset>
+    <fieldset class="form-group">
+      <label>Password</label>
+      <input type="password" name="password" [(ngModel)]="password" 
+      class="form-control" required="required">
+    </fieldset>
+
+    <!-- <button (click)=handleLogin() class="btn btn-success">Login</button> -->
+    <!-- <button (click)=handleBasicAuthLogin() class="btn btn-success">Login</button> -->
+    <button class="btn btn-success">Login</button>
+  
+  </form>
+  
+<!-- User Name : {{username}} -->
+</div>
